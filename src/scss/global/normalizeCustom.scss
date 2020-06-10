@@ -1,0 +1,62 @@
+/* Set box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Clean up margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+ul,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Clean up padding */
+ul,
+ol {
+  padding: 0;
+}
+
+/* body default settings */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  min-width: 320px;
+}
+
+/*  Remove default list-stile fo all ul & li that got attribute class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Simplification img */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherrit buttons and input style*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 2px 2px #609fcf;
+}

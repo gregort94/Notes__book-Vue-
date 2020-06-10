@@ -1,0 +1,12 @@
+.fade {
+   &-enter {
+      transform: translateY(-100%);
+   }
+   &-enter-active {
+      transition: all 1s;
+   }
+   &-leave-active {
+      transition: all 1s;
+      transform: translateY(-100%);
+   }
+}
