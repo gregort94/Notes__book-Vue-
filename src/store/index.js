@@ -3,10 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
+import { router } from '../routes'
 export const store = new Vuex.Store({
    state: {
-      maxId: false,
-      editingNote: false,
       deletingNote: false,
       notesData: [
          {
@@ -42,10 +41,8 @@ export const store = new Vuex.Store({
       }
    },
    mutations: {
-      addNote(store) {
-         const newNote = { title: "", todos: [] };
-         store.notesData.unshift(newNote);
-         store.editingNote = newNote;
+      addNote(state, note) {
+         state.notesData.unshift(note);
       },
       removeNote(state) {
          const index = state.notesData.indexOf(state.deletingNote);
@@ -56,9 +53,6 @@ export const store = new Vuex.Store({
       },
       setDeletingNote(state, note) {
          state.deletingNote = note;
-      },
-      closeEdit(state) {
-         state.editingNote = false;
       },
       clearDeletingData(state) {
          state.deletingNote = false;
@@ -73,26 +67,33 @@ export const store = new Vuex.Store({
       localStorageSync(state) {
          localStorage.setItem('notesData', JSON.stringify(state.notesData))
       },
-      setMaxId(state) {
-         let maxId = 0;
-         state.notesData.forEach(note => {
-            if (note.id > maxId) {
-               maxId = note.id;
-            }
-         });
-         state.maxId = maxId;
-      }
-
    },
    actions: {
-      removeNoteHandler(store, note) {
-         store.commit("removeNote", note);
-         store.commit("closeEdit");
+      removeNoteHandler(store) {
+         store.commit("removeNote");
          store.commit('localStorageSync');
+         if (router.currentRoute.fullPath === '/notes') {
+            return
+         }
+         router.push('/notes')
       },
       addNoteHandler(store) {
-         store.commit('addNote');
+         let id;
+         if (store.getters.notesData.length === 0) {
+            id = 0;
+         } else {
+            let maxId = 0;
+            store.getters.notesData.forEach(note => {
+               if (note.id > maxId) {
+                  maxId = note.id;
+               }
+            });
+            id = maxId + 1;
+         }
+         const newNote = { id: id, title: "", todos: [] };
+         store.commit('addNote', newNote);
          store.commit('localStorageSync');
+         router.push(`/notes/${id}`)
       }
    }
 })

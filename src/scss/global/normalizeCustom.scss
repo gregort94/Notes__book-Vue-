@@ -60,3 +60,9 @@ button:focus {
   outline: 0;
   box-shadow: 0 0 2px 2px #609fcf;
 }
+
+svg path {
+  fill:inherit;
+  stroke:inherit;
+  stroke-width:inherit;
+  }

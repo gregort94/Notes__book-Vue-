@@ -7,6 +7,7 @@
       :class="btnClasses[button.type]"
       :key="index"
       class="confirmWindow__btn"
+      type="button"
     >{{button.name}}</button>
     <button @click="$emit('cancel')" class="confirmWindow__btn--cancel">Cancel</button>
   </div>
