@@ -9,19 +9,23 @@ export const store = new Vuex.Store({
       deletingNote: false,
       notesData: [
          {
-            title: 'test',
+            title: 'Go shopping',
             id: 0,
             todos: [
                {
-                  text: 'todotodotodoodotodotodo todotodo',
+                  text: 'onion',
                   done: true
                },
                {
-                  text: 'todo todot odotodotodot odotodotodo',
+                  text: 'potato',
                   done: false
                },
                {
-                  text: 'todo to dotodotodoto otodotodotodo',
+                  text: 'milk',
+                  done: false
+               },
+               {
+                  text: 'cheese',
                   done: false
                },
             ]

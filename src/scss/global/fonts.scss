@@ -15,3 +15,20 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'Dreams Liem';
+  src: url('../assets/fonts/DreamsLiem.woff2') format('woff2'),
+      url('../assets/fonts/DreamsLiem.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'CheapPizza';
+  src: url('../assets/fonts/CheapPizzaHeavy.woff2') format('woff2'),
+      url('../assets/fonts/CheapPizzaHeavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+

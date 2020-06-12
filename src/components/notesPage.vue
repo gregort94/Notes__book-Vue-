@@ -119,6 +119,8 @@ export default {
 
 <style lang="scss">
 @import "../scss/global/variables.scss";
+@import "../scss/global/mixins.scss";
+$addBtnFill: #22b4b4;
 .header {
   padding: 15px;
   &__add {
@@ -131,11 +133,11 @@ export default {
     cursor: pointer;
     &:hover {
       svg {
-        fill: #22b4b4;
+        fill: darken($addBtnFill, 10%);
       }
     }
     svg {
-      fill: #29ebeb;
+      fill: $addBtnFill;
     }
   }
 }
@@ -166,6 +168,8 @@ export default {
   padding: 15px;
   border-radius: 1px;
   &__title {
+    font-size: 30px;
+    text-align: center;
   }
 
   &__list {
@@ -185,6 +189,7 @@ export default {
   }
   &__item-text {
     overflow: hidden;
+    @include unusual;
   }
   &__menu {
     position: absolute;

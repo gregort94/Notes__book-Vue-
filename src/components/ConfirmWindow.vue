@@ -36,7 +36,7 @@ export default {
 .confirmWindow {
   display: flex;
   background-color: rgb(49, 49, 49);
-  padding: 10px;
+  padding: 15px;
   position: absolute;
   top: 0;
   left: 0;
