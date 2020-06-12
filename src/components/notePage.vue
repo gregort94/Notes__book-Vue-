@@ -327,8 +327,6 @@ export default {
       fill: #0c2929;
     }
   }
-  &__list {
-  }
 }
 
 .todo {
